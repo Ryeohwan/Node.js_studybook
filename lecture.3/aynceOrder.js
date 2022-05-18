@@ -32,17 +32,17 @@ fs.readFile('lecture.3/readme2.txt', (err, data) => {
 // const fs = require('fs').promises;
 
 // async function main(){
-// 	let data = await fs.readFile('./readme.txt')
+//     console.log('시작');
+// 	let data = await fs.readFile('lecture.3/readme.txt')
 // 	console.log('1번', data.toString());
-// 	let data = await fs.readFile('./readme.txt')
-// 	console.log('2번', data.toString());
-// 	let data = await fs.readFile('./readme.txt')
-// 	console.log('3번', data.toString());
-// 	let data = await fs.readFile('./readme.txt')
-// 	console.log('4번', data.toString());
-
+// 	let data1 = await fs.readFile('lecture.3/readme.txt')
+// 	console.log('2번', data1.toString());
+// 	let data2 = await fs.readFile('lecture.3/readme.txt')
+// 	console.log('3번', data2.toString());
 // }
 
-// main();
+// main().then(()=>{
+//     console.log('끝');
+// }).catch(err => console.log(err));
 
 // // 이렇게 await 를 이용해서 then 지옥을 빠져나올 수 있다.
