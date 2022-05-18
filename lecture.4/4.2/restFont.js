@@ -53,7 +53,7 @@ async function getUser() { // 로딩 시 사용자 가져오는 함수
       return alert('이름을 입력하세요');
     }
     try {
-      await axios.post('/user', { name });
+      await axios.post('/user', { name }); // 메소드는 post url은 user
       getUser();
     } catch (err) {
       console.error(err);
