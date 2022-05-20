@@ -24,8 +24,10 @@ http.createServer(async (req, res) => { // function
     res.writeHead(302, {
       Location: '/',
       'Set-Cookie': `name=${encodeURIComponent(name)}; Expires=${expires.toGMTString()}; HttpOnly; Path=/`,
-    // 만료 시간을 정해둔 것이다. Http Only는 자바 스크립트로 쿠키 못건들게(보안상) 로그인에 쓰는 쿠키는 무조건 HTTP
+    // Expires는 만료 시간을 정해둔 것이다. Http Only는 자바 스크립트로 쿠키 못건들게(보안상) 
+    // 로그인에 쓰는 쿠키는 무조건 HTTP
     // path 는 / 뒤에 있는건 유효하다.
+    // 쿠키에 대한 보안 옵션을 잘 설정해두어야 한다. 
     });
     res.end();
   // name이라는 쿠키가 있는 경우
