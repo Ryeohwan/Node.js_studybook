@@ -4,9 +4,9 @@ const numCPUs = require('os').cpus().length;
 
 if (cluster.isMaster) { // 워커 스레드의 ismainthread 와 비슷하다.
   console.log(`마스터 프로세스 아이디: ${process.pid}`);
-  // CPU 개수만큼 워커를 생산
+  // CPU 개수만큼 워커를 생산 이 때의 워커는 프로세스다.
   for (let i = 0; i < numCPUs; i += 1) {
-    cluster.fork();  // 마스터에서 fork 를 사용해서 워커 프로세스를 생산한다.
+    cluster.fork();  // 마스터에서 fork 를 사용해서 워커를 생산한다.
   }
   // 워커가 종료되었을 때
   cluster.on('exit', (worker, code, signal) => {
